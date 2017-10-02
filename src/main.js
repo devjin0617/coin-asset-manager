@@ -7,8 +7,15 @@ import router from './router'
 import VueBlu from 'vue-blu'
 import 'vue-blu/dist/css/vue-blu.min.css'
 import './assets/stylesheets/base.css'
-
 Vue.use(VueBlu)
+
+import Firebase from 'firebase'
+import FBconfig from './config/FBConfig'
+let FirebaseApp = Firebase.initializeApp(FBconfig)
+Vue.prototype.Firebase = FirebaseApp
+
+import VueFire from 'vuefire'
+Vue.use(VueFire)
 
 Vue.config.productionTip = false
 
