@@ -6,6 +6,7 @@ import router from './router'
 
 import VueBlu from 'vue-blu'
 import 'vue-blu/dist/css/vue-blu.min.css'
+import './assets/stylesheets/base.css'
 
 Vue.use(VueBlu)
 
