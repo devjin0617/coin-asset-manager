@@ -98,7 +98,8 @@ export default {
 
 <style lang="scss" scoped>
 .login-view {
-  margin-top:15%;
+  margin-top: 15%;
+  padding: 0 20px;
   text-align:center;
   max-width:500px;
 }
