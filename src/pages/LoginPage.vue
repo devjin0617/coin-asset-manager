@@ -78,6 +78,7 @@ export default {
       if (user) {
         // User is signed in.
         console.log('login success', user)
+        this.$router.replace('/')
       } else {
         // No user is signed in.
         console.log('login fail')
