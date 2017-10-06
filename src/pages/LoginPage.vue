@@ -40,6 +40,9 @@ export default {
       }
     }
   },
+  created () {
+    window.document.getElementsByTagName('html')[0].className = ''
+  },
   computed: {
     modeName () {
       return this.isRegister ? 'login' : 'register'

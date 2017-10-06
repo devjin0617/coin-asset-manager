@@ -2,6 +2,10 @@ html {
   background-color: #4183DC;
 }
 
+html.main-view {
+  background-color: white;
+}
+
 .container {
   max-width: 768px;
 }
