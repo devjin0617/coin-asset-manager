@@ -112,6 +112,7 @@ export default {
 }
 .register-box {
   text-align:right;
+  font-size:24px;
 
   a {
     color: white;
@@ -119,8 +120,9 @@ export default {
 }
 h1 {
   color:white;
-  font-size:24px;
-  font-weight: 500;
+  font-size:40px;
+  font-weight: bold;
+  text-align:left;
 }
 button {
   width: 100%;
