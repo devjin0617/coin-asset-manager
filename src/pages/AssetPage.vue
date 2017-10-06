@@ -41,6 +41,25 @@ export default {
     if (user) {
       // User is signed in.
       console.log('login success', user)
+
+      let database = this.Firebase.database()
+
+      console.log(database)
+
+      let assetListRef = database.ref('/assets/' + user.uid)
+
+      assetListRef.on('value', (snapshot) => {
+        console.log(snapshot.val())
+
+        if (!snapshot.val()) {
+          database.ref('/assets/' + user.uid).set({
+            bithumb: {
+              apikey: 'abcde',
+              secret: 'helloworld'
+            }
+          })
+        }
+      })
     } else {
       // No user is signed in.
       console.log('login fail')
