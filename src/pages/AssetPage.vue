@@ -11,14 +11,13 @@
       <div style="width:100%; max-width:768px; min-height:700px; margin:auto;">
         <div class="column" style="padding:0;">
           <tabs :on-tab-click="tabMenu">
-            <tab-item label="AssetList"></tab-item>
-            <tab-item label="MarketCap"></tab-item>
-            <tab-item label="TalkList"></tab-item>
-            <tab-item label="More"></tab-item>
+            <tab-item label="AssetList">
+              <asset-list></asset-list>
+            </tab-item>
+            <tab-item label="MarketCap">MarketCap</tab-item>
+            <tab-item label="TalkList">TalkList</tab-item>
+            <tab-item label="More">More</tab-item>
           </tabs>
-        </div>
-        <div style="padding:5px;">
-          <router-view></router-view>
         </div>
       </div>
     </section>
@@ -26,11 +25,12 @@
 </template>
 
 <script>
+import AssetList from '@/components/AssetList'
 export default {
   name: 'asset-page',
   data () {
     return {
-      pageName: ''
+      pageName: 0
     }
   },
   created () {
@@ -60,8 +60,6 @@ export default {
           })
         }
       })
-
-      this.$router.replace('/main/aseets')
     } else {
       // No user is signed in.
       console.log('login fail')
@@ -72,6 +70,9 @@ export default {
     tabMenu (index) {
       this.pageName = index
     }
+  },
+  components: {
+    'asset-list': AssetList
   }
 }
 </script>

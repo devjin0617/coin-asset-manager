@@ -33,6 +33,9 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    console.log('asset-list')
   }
 }
 </script>
