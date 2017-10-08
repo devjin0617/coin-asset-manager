@@ -1,6 +1,6 @@
 <template>
   <div class="container login-view">
-    <h1>Coin AssetManager</h1>
+    <h1>Coin AM</h1>
     <div class="login-form">
       <p class="control has-icon">
         <input class="input is-large" type="email" name="email" placeholder="Email" v-model="form.email">
@@ -122,7 +122,7 @@ export default {
 h1 {
   color:white;
   font-size:40px;
-  font-weight: bold;
+  font-weight: 200;
   text-align:left;
 }
 button {
