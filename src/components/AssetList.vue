@@ -1,21 +1,37 @@
 <template>
   <div>
-    <data-table :data="items" >
-      <column width="30" label="" field="icon">
-        <template scope="row">
-          <div :class="[row.icon]"></div>
-        </template>
-      </column>
-      <column label="name" field="name"></column>
-      <column label="balance" field="balance"></column>
-      <column label="value" field="value">
-        <template scope="row">
-          <div>
-            {{ row.value.total }} | {{ row.value.current }}
-          </div>
-        </template>
-      </column>
-    </data-table>
+    <div>
+      <data-table :data="items" >
+        <column width="30" label="" field="icon">
+          <template scope="row">
+            <div :class="[row.icon]"></div>
+          </template>
+        </column>
+        <column label="name" field="name"></column>
+        <column label="balance" field="balance"></column>
+        <column label="value" field="value">
+          <template scope="row">
+            <div>
+              {{ row.value.total }} | {{ row.value.current }}
+            </div>
+          </template>
+        </column>
+      </data-table>
+    </div>
+    <div style="margin-bottom:20px;">
+      <a class="button is-primary is-large" @click="toggleModal">Add</a>
+    </div>
+
+
+    <div>
+      <modal title="Add coin info" :width="520" :is-show="isModal" transition="fadeDown" @close="isModal=false">
+        <h4>코인정보를 입력해주세요</h4>
+        <p>
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem. Praesent commodo cursus magna,
+          vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+        </p>
+      </modal>
+    </div>
   </div>
 </template>
 
@@ -24,6 +40,7 @@ export default {
   name: 'asset-list',
   data () {
     return {
+      isModal: false,
       items: [
         {
           key: 0,
@@ -40,6 +57,11 @@ export default {
   },
   mounted () {
     console.log('asset-list')
+  },
+  methods: {
+    toggleModal () {
+      this.isModal = true
+    }
   }
 }
 </script>
