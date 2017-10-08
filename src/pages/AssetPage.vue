@@ -18,7 +18,7 @@
           </tabs>
         </div>
         <div style="padding:5px;">
-          {{ pageName }}
+          <router-view></router-view>
         </div>
       </div>
     </section>
@@ -60,6 +60,8 @@ export default {
           })
         }
       })
+
+      this.$router.replace('/main/aseets')
     } else {
       // No user is signed in.
       console.log('login fail')
