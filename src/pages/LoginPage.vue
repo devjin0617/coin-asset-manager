@@ -7,7 +7,7 @@
         <i class="fa fa-envelope"></i>
       </p>
       <p class="control has-icon">
-        <input class="input" type="password" name="password" placeholder="Password" v-model="form.password">
+        <input class="input" type="password" name="password" placeholder="Password" v-model="form.password" @keyup.enter="handleAction">
         <i class="fa fa-lock"></i>
       </p>
       <p class="control has-icon" v-show="isRegister">
@@ -20,7 +20,7 @@
         </button>
         <div class="register-box">
           <a @click="modeChange">{{ modeName }}</a>
-          <a @click="logoutTest">logout(test)</a>
+          <a @click="logoutTest" >logout(test)</a>
         </div>
       </p>
     </div>
@@ -56,6 +56,7 @@ export default {
       this.isRegister = !this.isRegister
     },
     handleAction () {
+      console.log('handleAction')
       if (this.isRegister) {
         // register
         this.Firebase.auth().createUserWithEmailAndPassword(this.form.email, this.form.password).catch(error => {
