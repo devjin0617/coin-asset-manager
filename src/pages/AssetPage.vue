@@ -14,9 +14,15 @@
             <tab-item label="AssetList">
               <asset-list></asset-list>
             </tab-item>
-            <tab-item label="MarketCap">MarketCap</tab-item>
-            <tab-item label="TalkList">TalkList</tab-item>
-            <tab-item label="More">More</tab-item>
+            <tab-item label="MarketCap">
+              <market-cap></market-cap>
+            </tab-item>
+            <tab-item label="TalkList">
+              <talk-list></talk-list>
+            </tab-item>
+            <tab-item label="More">
+              <more></more>
+            </tab-item>
           </tabs>
         </div>
       </div>
@@ -26,6 +32,9 @@
 
 <script>
 import AssetList from '@/components/AssetList'
+import MarketCap from '@/components/MarketCap'
+import TalkList from '@/components/TalkList'
+import More from '@/components/More'
 export default {
   name: 'asset-page',
   data () {
@@ -72,7 +81,10 @@ export default {
     }
   },
   components: {
-    'asset-list': AssetList
+    'asset-list': AssetList,
+    'market-cap': MarketCap,
+    'talk-list': TalkList,
+    'more': More
   }
 }
 </script>
