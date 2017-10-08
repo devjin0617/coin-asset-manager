@@ -3,19 +3,19 @@
     <h1>Coin AssetManager</h1>
     <div class="login-form">
       <p class="control has-icon">
-        <input class="input" type="email" name="email" placeholder="Email" v-model="form.email">
+        <input class="input is-large" type="email" name="email" placeholder="Email" v-model="form.email">
         <i class="fa fa-envelope"></i>
       </p>
       <p class="control has-icon">
-        <input class="input" type="password" name="password" placeholder="Password" v-model="form.password" @keyup.enter="handleAction">
+        <input class="input is-large" type="password" name="password" placeholder="Password" v-model="form.password" @keyup.enter="handleAction">
         <i class="fa fa-lock"></i>
       </p>
       <p class="control has-icon" v-show="isRegister">
-        <input class="input" type="password" name="check-password" placeholder="check Password" v-model="form.checkPassword">
+        <input class="input is-large" type="password" name="check-password" placeholder="check Password" v-model="form.checkPassword">
         <i class="fa fa-lock"></i>
       </p>
       <p class="control">
-        <button class="button is-success" @click="handleAction">
+        <button class="button is-success is-large" @click="handleAction">
           {{ buttonName }}
         </button>
         <div class="register-box">
